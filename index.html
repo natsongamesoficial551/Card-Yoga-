@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alessandra Gomes - Yoga Teacher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ===== TEMAS BRASIL E EUA ===== */
+        :root {
+            /* TEMA BRASIL */
+            --br-green: #009c3b;
+            --br-yellow: #ffdf00;
+            --br-blue: #002776;
+            --br-white: #ffffff;
+            
+            /* TEMA EUA */
+            --usa-red: #b22234;
+            --usa-blue: #3c3b6e;
+            --usa-white: #ffffff;
+            
+            /* VARIÁVEIS ATIVAS (começa com Brasil) */
+            --color-primary: var(--br-green);
+            --color-secondary: var(--br-yellow);
+            --color-accent: var(--br-blue);
+            --color-light: var(--br-white);
+            
+            /* FUNDO */
+            --bg-image: url('https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=2070');
+            --bg-overlay: linear-gradient(135deg, rgba(0, 156, 59, 0.85), rgba(0, 39, 118, 0.9));
+        }
+
+        [data-theme="usa"] {
+            --color-primary: var(--usa-red);
+            --color-secondary: var(--usa-white);
+            --color-accent: var(--usa-blue);
+            --color-light: var(--usa-white);
+            --bg-image: url('https://images.unsplash.com/photo-1518416177092-ec985e4d6c14?q=80&w=2070');
+            --bg-overlay: linear-gradient(135deg, rgba(178, 34, 52, 0.85), rgba(60, 59, 110, 0.9));
+        }
+
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ===== BODY COM FUNDO FULLSCREEN ===== */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            color: white;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Camada de fundo com imagem */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: var(--bg-image);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            transition: all 0.8s ease;
+            z-index: -2;
+        }
+
+        /* Camada de overlay colorida */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-overlay);
+            transition: all 0.8s ease;
+            z-index: -1;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.9; }
+            50% { opacity: 0.95; }
+        }
+
+        /* ===== LAYOUT PRINCIPAL ===== */
+        .main-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+
+        /* ===== HEADER COM CONTROLES ===== */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 40px;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            animation: slideDown 0.8s ease-out;
+            position: relative;
+            z-index: 100;
+            flex-shrink: 0;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo/Brand */
+        .brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--color-secondary);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Controles */
+        .controls {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        /* Toggle de Idioma */
+        .language-toggle {
+            display: flex;
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 4px;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background: var(--color-primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Toggle de Tema País */
+        .country-toggle {
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            padding: 8px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 24px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .country-toggle:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.05);
+        }
+
+        /* ===== CONTEÚDO CENTRAL ===== */
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px 100px 20px;
+            gap: 80px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+            flex: 1;
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== PERFIL ===== */
+        .profile {
+            text-align: center;
+            max-width: 600px;
+            position: relative;
+            z-index: 20;
+        }
+
+        .profile-image-wrapper {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 40px;
+        }
+
+        .profile-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+            border-radius: 50%;
+            animation: rotate 6s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .profile-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            color: white;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+            border: 4px solid white;
+            transition: all 0.5s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .profile h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.6);
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .profile .subtitle {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--color-secondary);
+            margin-bottom: 28px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .profile .bio {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 400;
+            font-style: italic;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== LINKS ===== */
+        .links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+            padding: 0 20px;
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 20;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 32px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .link-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: var(--color-primary);
+            border-radius: 16px;
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease;
+            z-index: 0;
+        }
+
+        .link-btn:hover::before {
+            width: 120%;
+            height: 120%;
+        }
+
+        .link-btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 56px rgba(0, 0, 0, 0.6);
+            border-color: var(--color-secondary);
+        }
+
+        .link-btn .icon {
+            margin-right: 12px;
+            font-size: 28px;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.4s ease;
+            display: flex;
+            align-items: center;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .link-btn:hover .icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .link-btn span:last-child {
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Botão Primário */
+        .link-btn.primary {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            border-color: var(--color-secondary);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+            font-size: 18px;
+            padding: 28px 36px;
+            transform: scale(1);
+        }
+
+        .link-btn.primary::before {
+            background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+        }
+
+        .link-btn.primary:hover {
+            transform: translateY(-12px) scale(1.08);
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            padding: 48px 40px 36px 40px;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            animation: slideUp 0.8s ease-out;
+            margin-top: auto;
+            position: relative;
+            z-index: 100;
+            flex-shrink: 0;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .social-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: var(--color-primary);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.4s ease;
+        }
+
+        .social-btn:hover::before {
+            width: 120%;
+            height: 120%;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-6px) rotate(360deg);
+            border-color: var(--color-secondary);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .social-btn span {
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .footer-text {
+            text-align: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ===== BANDEIRAS DECORATIVAS ===== */
+        .flag-decoration {
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            opacity: 0.1;
+            pointer-events: none;
+            transition: all 0.8s ease;
+            z-index: 0;
+        }
+
+        .flag-top-left {
+            top: 10%;
+            left: 5%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .flag-bottom-right {
+            bottom: 10%;
+            right: 5%;
+            animation: float 8s ease-in-out infinite 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 768px) {
+            .header {
+                padding: 20px;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .brand {
+                font-size: 20px;
+            }
+
+            .content {
+                padding: 50px 20px 70px 20px;
+                gap: 56px;
+            }
+
+            .profile {
+                padding: 0 16px;
+            }
+
+            .profile h1 {
+                font-size: 40px;
+                margin-bottom: 16px;
+            }
+
+            .profile .subtitle {
+                font-size: 15px;
+                letter-spacing: 3px;
+                margin-bottom: 24px;
+            }
+
+            .profile .bio {
+                font-size: 18px;
+                line-height: 1.7;
+                padding: 0 8px;
+            }
+
+            .profile-image-wrapper {
+                width: 140px;
+                height: 140px;
+                margin-bottom: 32px;
+            }
+
+            .profile-image {
+                width: 140px;
+                height: 140px;
+                font-size: 56px;
+            }
+
+            .links {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+                padding: 0 16px;
+                gap: 18px;
+                margin-bottom: 60px;
+            }
+
+            .link-btn {
+                padding: 20px 28px;
+                font-size: 15px;
+            }
+
+            .link-btn.primary {
+                padding: 24px 32px;
+                font-size: 16px;
+            }
+
+            .link-btn .icon {
+                font-size: 26px;
+                margin-right: 10px;
+            }
+
+            .link-btn:hover {
+                transform: translateY(-6px) scale(1.03);
+            }
+
+            .link-btn.primary:hover {
+                transform: translateY(-8px) scale(1.05);
+            }
+
+            .flag-decoration {
+                display: none;
+            }
+
+            .footer {
+                padding: 36px 24px 28px 24px;
+            }
+
+            .social-links {
+                gap: 14px;
+                margin-bottom: 20px;
+            }
+
+            .social-btn {
+                width: 52px;
+                height: 52px;
+                font-size: 22px;
+            }
+
+            .social-btn:hover {
+                transform: translateY(-4px) rotate(360deg);
+            }
+
+            .footer-text {
+                font-size: 12px;
+            }
+        }
+
+        /* ===== RESPONSIVIDADE TABLETS ===== */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .header {
+                padding: 22px 32px;
+            }
+
+            .content {
+                padding: 70px 32px 90px 32px;
+                gap: 70px;
+            }
+
+            .profile h1 {
+                font-size: 48px;
+            }
+
+            .profile .bio {
+                font-size: 20px;
+            }
+
+            .profile-image-wrapper {
+                margin-bottom: 36px;
+            }
+
+            .links {
+                max-width: 700px;
+                gap: 18px;
+                padding: 0 20px;
+                margin-bottom: 70px;
+            }
+
+            .link-btn {
+                padding: 22px 30px;
+                font-size: 15px;
+            }
+
+            .link-btn.primary {
+                padding: 26px 34px;
+                font-size: 17px;
+            }
+
+            .link-btn:hover {
+                transform: translateY(-10px) scale(1.06);
+            }
+
+            .link-btn.primary:hover {
+                transform: translateY(-14px) scale(1.09);
+            }
+
+            .footer {
+                padding: 44px 32px 32px 32px;
+            }
+        }
+
+        /* ===== RESPONSIVIDADE CELULARES PEQUENOS ===== */
+        @media (max-width: 480px) {
+            .content {
+                padding: 40px 16px 60px 16px;
+                gap: 44px;
+            }
+
+            .profile {
+                padding: 0 12px;
+            }
+
+            .profile h1 {
+                font-size: 34px;
+                letter-spacing: 1px;
+                margin-bottom: 14px;
+            }
+
+            .profile .subtitle {
+                font-size: 13px;
+                letter-spacing: 2px;
+                margin-bottom: 20px;
+            }
+
+            .profile .bio {
+                font-size: 16px;
+                line-height: 1.6;
+                padding: 0 4px;
+            }
+
+            .profile-image-wrapper {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 28px;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+                font-size: 48px;
+            }
+
+            .links {
+                gap: 16px;
+                margin-bottom: 50px;
+                padding: 0 12px;
+            }
+
+            .link-btn {
+                padding: 18px 24px;
+                font-size: 14px;
+                border-radius: 14px;
+            }
+
+            .link-btn.primary {
+                padding: 22px 28px;
+                font-size: 15px;
+            }
+
+            .link-btn .icon {
+                font-size: 24px;
+                margin-right: 8px;
+            }
+
+            .link-btn:hover {
+                transform: translateY(-5px) scale(1.02);
+            }
+
+            .link-btn.primary:hover {
+                transform: translateY(-7px) scale(1.04);
+            }
+
+            .social-links {
+                gap: 12px;
+                margin-bottom: 18px;
+            }
+
+            .social-btn {
+                width: 48px;
+                height: 48px;
+                font-size: 20px;
+            }
+
+            .social-btn:hover {
+                transform: translateY(-3px) rotate(360deg);
+            }
+
+            .footer {
+                padding: 32px 20px 24px 20px;
+            }
+
+            .controls {
+                flex-direction: row;
+                gap: 12px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .language-toggle {
+                flex: 0;
+            }
+        }
+
+        /* ===== ÍCONES EM IMAGENS ===== */
+        .icon img,
+        .social-btn span img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .social-btn span img {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Decorações de bandeira -->
+    <div class="flag-decoration flag-top-left">🇧🇷</div>
+    <div class="flag-decoration flag-bottom-right">🇧🇷</div>
+
+    <div class="main-container">
+        <!-- ===== HEADER ===== -->
+        <header class="header">
+            <div class="brand">✦ Alessandra Gomes ✦</div>
+            
+            <div class="controls">
+                <div class="language-toggle">
+                    <button class="lang-btn active" data-lang="pt">PT</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                
+                <button class="country-toggle" id="countryToggle" title="Mudar tema">
+                    <span class="country-flag">🇧🇷</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+        <main class="content">
+            <!-- PERFIL -->
+            <section class="profile">
+                <div class="profile-image-wrapper">
+                    <div class="profile-image" data-emoji="🧘‍♀️">
+                        <!-- Para imagem: <img src="sua-foto.jpg" alt="Alessandra Gomes"> -->
+                    </div>
+                </div>
+                
+                <h1>Alessandra Gomes</h1>
+                
+                <p class="subtitle" data-i18n="subtitle">
+                    Professora de Yoga
+                </p>
+                
+                <p class="bio" data-i18n="bio">
+                    Conecte-se com sua essência através do movimento consciente e da respiração
+                </p>
+            </section>
+
+            <!-- LINKS -->
+            <section class="links">
+                <!-- Botão 1: Aula Experimental -->
+                <a href="#" class="link-btn primary">
+                    <span class="icon">📅</span>
+                    <!-- Para imagem: <span class="icon"><img src="icons/calendar.svg" alt=""></span> -->
+                    <span data-i18n="btn-trial">Agende sua aula experimental</span>
+                </a>
+
+                <!-- Botão 2: Prática Online -->
+                <a href="#" class="link-btn">
+                    <span class="icon">💻</span>
+                    <span data-i18n="btn-online">Pratique online comigo</span>
+                </a>
+
+                <!-- Botão 3: WhatsApp -->
+                <a href="#" class="link-btn">
+                    <span class="icon">💬</span>
+                    <span data-i18n="btn-whatsapp">Fale comigo no WhatsApp</span>
+                </a>
+
+                <!-- Botão 4: SMS (USA) -->
+                <a href="#" class="link-btn">
+                    <span class="icon">📱</span>
+                    <span data-i18n="btn-sms">Envie uma mensagem (USA)</span>
+                </a>
+            </section>
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="social-links">
+                <a href="#" class="social-btn" title="Instagram">
+                    <span>📷</span>
+                    <!-- Para imagem: <span><img src="icons/instagram.svg" alt="Instagram"></span> -->
+                </a>
+                
+                <a href="#" class="social-btn" title="Facebook">
+                    <span>👤</span>
+                </a>
+                
+                <a href="#" class="social-btn" title="YouTube">
+                    <span>▶️</span>
+                </a>
+                
+                <a href="#" class="social-btn" title="Email">
+                    <span>✉️</span>
+                </a>
+            </div>
+            
+            <p class="footer-text">© 2025 Alessandra Gomes Yoga</p>
+        </footer>
+    </div>
+
+    <script>
+        /* ===== TRADUÇÕES ===== */
+        const translations = {
+            pt: {
+                subtitle: 'Professora de Yoga',
+                bio: 'Conecte-se com sua essência através do movimento consciente e da respiração',
+                'btn-trial': 'Agende sua aula experimental',
+                'btn-online': 'Pratique online comigo',
+                'btn-whatsapp': 'Fale comigo no WhatsApp',
+                'btn-sms': 'Envie uma mensagem (USA)'
+            },
+            en: {
+                subtitle: 'Yoga Teacher',
+                bio: 'Connect with your essence through mindful movement and breath',
+                'btn-trial': 'Book a trial class',
+                'btn-online': 'Practice online with me',
+                'btn-whatsapp': 'Chat with me on WhatsApp',
+                'btn-sms': 'Send me a text (USA)'
+            }
+        };
+
+        /* ===== ALTERNÂNCIA DE IDIOMA ===== */
+        let currentLang = 'pt';
+        const langButtons = document.querySelectorAll('.lang-btn');
+        
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentLang = btn.dataset.lang;
+                
+                langButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.dataset.i18n;
+                    if (translations[currentLang][key]) {
+                        el.textContent = translations[currentLang][key];
+                    }
+                });
+                
+                document.documentElement.lang = currentLang;
+            });
+        });
+
+        /* ===== ALTERNÂNCIA DE TEMA PAÍS ===== */
+        const countryToggle = document.getElementById('countryToggle');
+        const countryFlag = countryToggle.querySelector('.country-flag');
+        const flagDecorations = document.querySelectorAll('.flag-decoration');
+        let currentCountry = 'brazil';
+
+        // Verifica tema salvo
+        if (localStorage.getItem('country-theme') === 'usa') {
+            currentCountry = 'usa';
+            document.documentElement.setAttribute('data-theme', 'usa');
+            countryFlag.textContent = '🇺🇸';
+            flagDecorations.forEach(flag => flag.textContent = '🇺🇸');
+        }
+
+        countryToggle.addEventListener('click', () => {
+            if (currentCountry === 'brazil') {
+                currentCountry = 'usa';
+                document.documentElement.setAttribute('data-theme', 'usa');
+                countryFlag.textContent = '🇺🇸';
+                flagDecorations.forEach(flag => flag.textContent = '🇺🇸');
+                localStorage.setItem('country-theme', 'usa');
+            } else {
+                currentCountry = 'brazil';
+                document.documentElement.removeAttribute('data-theme');
+                countryFlag.textContent = '🇧🇷';
+                flagDecorations.forEach(flag => flag.textContent = '🇧🇷');
+                localStorage.setItem('country-theme', 'brazil');
+            }
+        });
+
+        /* ===== EFEITO PARALLAX NO SCROLL ===== */
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const profile = document.querySelector('.profile');
+            const links = document.querySelector('.links');
+            
+            if (profile) {
+                profile.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+            
+            if (links) {
+                links.style.transform = `translateY(${scrolled * 0.15}px)`;
+            }
+        });
+
+        /* ===== ANIMAÇÃO DE ENTRADA DOS BOTÕES ===== */
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0) scale(1)';
+                    }, index * 150);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.link-btn').forEach(btn => {
+            btn.style.opacity = '0';
+            btn.style.transform = 'translateY(30px) scale(0.9)';
+            btn.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            observer.observe(btn);
+        });
+
+        /* ===== INSTRUÇÕES ===== */
+        console.log(`
+        ✨ BIO LINK FULLSCREEN - ALESSANDRA GOMES YOGA ✨
+        
+        🌍 TEMAS IMPLEMENTADOS:
+        
+        🇧🇷 BRASIL: Verde, Amarelo, Azul + Fundo do Rio de Janeiro
+        🇺🇸 EUA: Vermelho, Branco, Azul + Fundo de Hollywood/Las Vegas
+        
+        🎨 RECURSOS:
+        - Fundo fullscreen com imagens reais
+        - Overlay colorido com cores do tema
+        - Transição suave entre temas (0.8s)
+        - Layout responsivo grid
+        - Animações parallax no scroll
+        - Bandeiras decorativas flutuantes
+        
+        📝 PERSONALIZAÇÃO:
+        
+        Para trocar as imagens de fundo, edite no CSS:
+        
+        BRASIL (linha 31):
+        --bg-image: url('SUA_URL_AQUI');
+        
+        EUA (linha 44):
+        --bg-image: url('SUA_URL_AQUI');
+        
+        🔗 LINKS RECOMENDADOS:
+        - WhatsApp BR: https://wa.me/5511999999999
+        - SMS USA: sms:+12345678900
+        - Instagram: https://instagram.com/seu_usuario
+        `);
+    </script>
+</body>
+</html>

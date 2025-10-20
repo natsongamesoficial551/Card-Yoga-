@@ -5,40 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alessandra Gomes - Yoga Teacher</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/canva-sans" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/brittany-signature" rel="stylesheet">
     <style>
-        /* ===== TEMAS BRASIL E EUA ===== */
+        /* ===== PALETA DE CORES ===== */
         :root {
-            /* TEMA BRASIL */
-            --br-green: #009c3b;
-            --br-yellow: #ffdf00;
-            --br-blue: #002776;
-            --br-white: #ffffff;
+            --color-sage: #9fa192;
+            --color-sand: #c8b9a6;
+            --color-cream: #ddd5c7;
+            --color-white: #f5f5f0;
+            --color-gold: #a08843;
             
-            /* TEMA EUA */
-            --usa-red: #b22234;
-            --usa-blue: #3c3b6e;
-            --usa-white: #ffffff;
-            
-            /* VARIÁVEIS ATIVAS (começa com Brasil) */
-            --color-primary: var(--br-green);
-            --color-secondary: var(--br-yellow);
-            --color-accent: var(--br-blue);
-            --color-light: var(--br-white);
-            
-            /* FUNDO */
-            --bg-image: url('https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=2070');
-            --bg-overlay: linear-gradient(135deg, rgba(0, 156, 59, 0.85), rgba(0, 39, 118, 0.9));
-        }
-
-        [data-theme="usa"] {
-            --color-primary: var(--usa-red);
-            --color-secondary: var(--usa-white);
-            --color-accent: var(--usa-blue);
-            --color-light: var(--usa-white);
-            --bg-image: url('https://images.unsplash.com/photo-1518416177092-ec985e4d6c14?q=80&w=2070');
-            --bg-overlay: linear-gradient(135deg, rgba(178, 34, 52, 0.85), rgba(60, 59, 110, 0.9));
+            /* Cores para uso */
+            --color-primary: var(--color-sage);
+            --color-secondary: var(--color-gold);
+            --color-accent: var(--color-sand);
+            --color-light: var(--color-white);
+            --color-neutral: var(--color-cream);
         }
 
         /* ===== RESET ===== */
@@ -48,17 +40,17 @@
             box-sizing: border-box;
         }
 
-        /* ===== BODY COM FUNDO FULLSCREEN ===== */
+        /* ===== BODY COM FUNDO ===== */
         body {
             font-family: 'Montserrat', sans-serif;
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
-            color: white;
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            color: #333;
+            transition: all 0.5s ease;
         }
 
-        /* Camada de fundo com imagem */
+        /* Camada de fundo com imagem (substituir por sua foto) */
         body::before {
             content: '';
             position: fixed;
@@ -66,15 +58,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: var(--bg-image);
+            background-image: url('./assets/fundo\ 2.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            transition: all 0.8s ease;
             z-index: -2;
         }
 
-        /* Camada de overlay colorida */
+        /* Camada de overlay com cor */
         body::after {
             content: '';
             position: fixed;
@@ -82,15 +73,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--bg-overlay);
-            transition: all 0.8s ease;
+            background: var(--color-cream);
+            opacity: 0.92;
             z-index: -1;
-            animation: pulse 8s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.9; }
-            50% { opacity: 0.95; }
         }
 
         /* ===== LAYOUT PRINCIPAL ===== */
@@ -101,18 +86,19 @@
             padding: 0;
         }
 
-        /* ===== HEADER COM CONTROLES ===== */
+        /* ===== HEADER ===== */
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 24px 40px;
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
             animation: slideDown 0.8s ease-out;
             position: relative;
             z-index: 100;
             flex-shrink: 0;
+            border-bottom: 1px solid rgba(160, 136, 67, 0.2);
         }
 
         @keyframes slideDown {
@@ -128,12 +114,12 @@
 
         /* Logo/Brand */
         .brand {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 24px;
+            font-family: "Allura", cursive;
+            font-size: 32px;
             font-weight: 600;
-            letter-spacing: 1px;
-            color: var(--color-secondary);
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+            color: var(--color-gold);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         /* Controles */
@@ -147,10 +133,10 @@
         .language-toggle {
             display: flex;
             gap: 4px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.4);
             padding: 4px;
             border-radius: 12px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid var(--color-accent);
             backdrop-filter: blur(10px);
         }
 
@@ -158,7 +144,7 @@
             padding: 8px 16px;
             border: none;
             background: transparent;
-            color: rgba(255, 255, 255, 0.7);
+            color: var(--color-primary);
             cursor: pointer;
             border-radius: 8px;
             font-size: 13px;
@@ -168,29 +154,14 @@
         }
 
         .lang-btn.active {
-            background: var(--color-primary);
+            background: var(--color-gold);
             color: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 8px rgba(160, 136, 67, 0.3);
         }
 
-        /* Toggle de Tema País */
-        .country-toggle {
-            background: rgba(255, 255, 255, 0.15);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
-            padding: 8px 16px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 24px;
-            transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .country-toggle:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: scale(1.05);
+        .lang-btn:hover {
+            background: var(--color-sand);
+            color: white;
         }
 
         /* ===== CONTEÚDO CENTRAL ===== */
@@ -240,10 +211,10 @@
             left: -8px;
             right: -8px;
             bottom: -8px;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+            background: linear-gradient(135deg, var(--color-sage), var(--color-gold), var(--color-sand));
             border-radius: 50%;
-            animation: rotate 6s linear infinite;
-            opacity: 0.8;
+            animation: rotate 8s linear infinite;
+            opacity: 0.6;
         }
 
         @keyframes rotate {
@@ -255,13 +226,13 @@
             width: 160px;
             height: 160px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            background: linear-gradient(135deg, var(--color-sage), var(--color-sand));
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 64px;
             color: white;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 12px 40px rgba(159, 161, 146, 0.4);
             position: relative;
             z-index: 1;
             border: 4px solid white;
@@ -280,34 +251,37 @@
         }
 
         .profile h1 {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: "Allura", cursive;
+            font-style: italic;
             font-size: 56px;
             font-weight: 700;
             margin-bottom: 20px;
-            color: white;
-            text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.6);
-            letter-spacing: 2px;
+            color: var(--color-gold);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+            letter-spacing: 3px;
             line-height: 1.2;
         }
 
         .profile .subtitle {
-            font-size: 18px;
+            font-family: "DM Serif Display", serif;
+            font-style: oblique;
+            font-size: 16px;
             font-weight: 600;
             letter-spacing: 4px;
             text-transform: uppercase;
-            color: var(--color-secondary);
+            color: var(--color-sage);
             margin-bottom: 28px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .profile .bio {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: "DM Serif Display", serif;
             font-size: 22px;
             line-height: 1.8;
-            color: rgba(255, 255, 255, 0.95);
+            color: #5a5a5a;
             font-weight: 400;
             font-style: italic;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
             max-width: 500px;
             margin: 0 auto;
             padding: 0 20px;
@@ -327,16 +301,17 @@
         }
 
         .link-btn {
+            font-family: "Merriweather", serif;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 24px 32px;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid var(--color-accent);
             border-radius: 16px;
             text-decoration: none;
-            color: white;
+            color: #4a4a4a;
             font-size: 16px;
             font-weight: 600;
             letter-spacing: 0.5px;
@@ -344,7 +319,7 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
         }
 
         .link-btn::before {
@@ -354,7 +329,7 @@
             left: 50%;
             width: 0;
             height: 0;
-            background: var(--color-primary);
+            background: var(--color-sage);
             border-radius: 16px;
             transform: translate(-50%, -50%);
             transition: all 0.5s ease;
@@ -368,8 +343,9 @@
 
         .link-btn:hover {
             transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 20px 56px rgba(0, 0, 0, 0.6);
-            border-color: var(--color-secondary);
+            box-shadow: 0 20px 56px rgba(159, 161, 146, 0.3);
+            border-color: var(--color-gold);
+            color: white;
         }
 
         .link-btn .icon {
@@ -380,7 +356,7 @@
             transition: transform 0.4s ease;
             display: flex;
             align-items: center;
-            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+            filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.1));
         }
 
         .link-btn:hover .icon {
@@ -390,38 +366,40 @@
         .link-btn span:last-child {
             position: relative;
             z-index: 1;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         /* Botão Primário */
         .link-btn.primary {
-            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
-            border-color: var(--color-secondary);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(135deg, var(--color-gold), var(--color-sand));
+            border-color: var(--color-gold);
+            color: white;
+            box-shadow: 0 12px 32px rgba(160, 136, 67, 0.3);
             font-size: 18px;
             padding: 28px 36px;
-            transform: scale(1);
         }
 
         .link-btn.primary::before {
-            background: linear-gradient(135deg, var(--color-accent), var(--color-primary));
+            background: linear-gradient(135deg, var(--color-sage), var(--color-gold));
         }
 
         .link-btn.primary:hover {
             transform: translateY(-12px) scale(1.08);
-            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 24px 64px rgba(160, 136, 67, 0.4);
+            color: white;
         }
 
         /* ===== FOOTER ===== */
         .footer {
             padding: 48px 40px 36px 40px;
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(15px);
             animation: slideUp 0.8s ease-out;
             margin-top: auto;
             position: relative;
             z-index: 100;
             flex-shrink: 0;
+            border-top: 1px solid rgba(160, 136, 67, 0.2);
         }
 
         @keyframes slideUp {
@@ -446,19 +424,19 @@
             width: 56px;
             height: 56px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid var(--color-accent);
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            color: white;
+            color: var(--color-gold);
             font-size: 24px;
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
         }
 
         .social-btn::before {
@@ -468,7 +446,7 @@
             left: 50%;
             width: 0;
             height: 0;
-            background: var(--color-primary);
+            background: var(--color-gold);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             transition: all 0.4s ease;
@@ -481,51 +459,24 @@
 
         .social-btn:hover {
             transform: translateY(-6px) rotate(360deg);
-            border-color: var(--color-secondary);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+            border-color: var(--color-gold);
+            box-shadow: 0 12px 32px rgba(160, 136, 67, 0.3);
+            color: white;
         }
 
         .social-btn span {
             position: relative;
             z-index: 1;
-            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+            filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.1));
         }
 
         .footer-text {
             text-align: center;
             font-size: 14px;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 300;
+            color: var(--color-sage);
+            font-weight: 400;
             letter-spacing: 1px;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        /* ===== BANDEIRAS DECORATIVAS ===== */
-        .flag-decoration {
-            position: fixed;
-            width: 200px;
-            height: 200px;
-            opacity: 0.1;
-            pointer-events: none;
-            transition: all 0.8s ease;
-            z-index: 0;
-        }
-
-        .flag-top-left {
-            top: 10%;
-            left: 5%;
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .flag-bottom-right {
-            bottom: 10%;
-            right: 5%;
-            animation: float 8s ease-in-out infinite 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
         }
 
         /* ===== RESPONSIVIDADE ===== */
@@ -537,7 +488,7 @@
             }
 
             .brand {
-                font-size: 20px;
+                font-size: 22px;
             }
 
             .content {
@@ -555,7 +506,7 @@
             }
 
             .profile .subtitle {
-                font-size: 15px;
+                font-size: 14px;
                 letter-spacing: 3px;
                 margin-bottom: 24px;
             }
@@ -607,10 +558,6 @@
 
             .link-btn.primary:hover {
                 transform: translateY(-8px) scale(1.05);
-            }
-
-            .flag-decoration {
-                display: none;
             }
 
             .footer {
@@ -677,14 +624,6 @@
                 font-size: 17px;
             }
 
-            .link-btn:hover {
-                transform: translateY(-10px) scale(1.06);
-            }
-
-            .link-btn.primary:hover {
-                transform: translateY(-14px) scale(1.09);
-            }
-
             .footer {
                 padding: 44px 32px 32px 32px;
             }
@@ -703,7 +642,7 @@
 
             .profile h1 {
                 font-size: 34px;
-                letter-spacing: 1px;
+                letter-spacing: 2px;
                 margin-bottom: 14px;
             }
 
@@ -753,14 +692,6 @@
                 margin-right: 8px;
             }
 
-            .link-btn:hover {
-                transform: translateY(-5px) scale(1.02);
-            }
-
-            .link-btn.primary:hover {
-                transform: translateY(-7px) scale(1.04);
-            }
-
             .social-links {
                 gap: 12px;
                 margin-bottom: 18px;
@@ -770,10 +701,6 @@
                 width: 48px;
                 height: 48px;
                 font-size: 20px;
-            }
-
-            .social-btn:hover {
-                transform: translateY(-3px) rotate(360deg);
             }
 
             .footer {
@@ -786,10 +713,6 @@
                 width: 100%;
                 justify-content: center;
             }
-
-            .language-toggle {
-                flex: 0;
-            }
         }
 
         /* ===== ÍCONES EM IMAGENS ===== */
@@ -798,7 +721,7 @@
             width: 28px;
             height: 28px;
             object-fit: contain;
-            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+            filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.1));
         }
 
         .social-btn span img {
@@ -808,10 +731,6 @@
     </style>
 </head>
 <body>
-    <!-- Decorações de bandeira -->
-    <div class="flag-decoration flag-top-left">🇧🇷</div>
-    <div class="flag-decoration flag-bottom-right">🇧🇷</div>
-
     <div class="main-container">
         <!-- ===== HEADER ===== -->
         <header class="header">
@@ -822,10 +741,6 @@
                     <button class="lang-btn active" data-lang="pt">PT</button>
                     <button class="lang-btn" data-lang="en">EN</button>
                 </div>
-                
-                <button class="country-toggle" id="countryToggle" title="Mudar tema">
-                    <span class="country-flag">🇧🇷</span>
-                </button>
             </div>
         </header>
 
@@ -834,8 +749,8 @@
             <!-- PERFIL -->
             <section class="profile">
                 <div class="profile-image-wrapper">
-                    <div class="profile-image" data-emoji="🧘‍♀️">
-                        <!-- Para imagem: <img src="sua-foto.jpg" alt="Alessandra Gomes"> -->
+                    <div class="profile-image">
+                        <img src="./assets/Logo.jpg" alt="Logo Alessandra Gomes">
                     </div>
                 </div>
                 
@@ -855,7 +770,6 @@
                 <!-- Botão 1: Aula Experimental -->
                 <a href="#" class="link-btn primary">
                     <span class="icon">📅</span>
-                    <!-- Para imagem: <span class="icon"><img src="icons/calendar.svg" alt=""></span> -->
                     <span data-i18n="btn-trial">Agende sua aula experimental</span>
                 </a>
 
@@ -884,7 +798,6 @@
             <div class="social-links">
                 <a href="#" class="social-btn" title="Instagram">
                     <span>📷</span>
-                    <!-- Para imagem: <span><img src="icons/instagram.svg" alt="Instagram"></span> -->
                 </a>
                 
                 <a href="#" class="social-btn" title="Facebook">
@@ -947,36 +860,6 @@
             });
         });
 
-        /* ===== ALTERNÂNCIA DE TEMA PAÍS ===== */
-        const countryToggle = document.getElementById('countryToggle');
-        const countryFlag = countryToggle.querySelector('.country-flag');
-        const flagDecorations = document.querySelectorAll('.flag-decoration');
-        let currentCountry = 'brazil';
-
-        // Verifica tema salvo
-        if (localStorage.getItem('country-theme') === 'usa') {
-            currentCountry = 'usa';
-            document.documentElement.setAttribute('data-theme', 'usa');
-            countryFlag.textContent = '🇺🇸';
-            flagDecorations.forEach(flag => flag.textContent = '🇺🇸');
-        }
-
-        countryToggle.addEventListener('click', () => {
-            if (currentCountry === 'brazil') {
-                currentCountry = 'usa';
-                document.documentElement.setAttribute('data-theme', 'usa');
-                countryFlag.textContent = '🇺🇸';
-                flagDecorations.forEach(flag => flag.textContent = '🇺🇸');
-                localStorage.setItem('country-theme', 'usa');
-            } else {
-                currentCountry = 'brazil';
-                document.documentElement.removeAttribute('data-theme');
-                countryFlag.textContent = '🇧🇷';
-                flagDecorations.forEach(flag => flag.textContent = '🇧🇷');
-                localStorage.setItem('country-theme', 'brazil');
-            }
-        });
-
         /* ===== EFEITO PARALLAX NO SCROLL ===== */
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
@@ -1018,35 +901,27 @@
 
         /* ===== INSTRUÇÕES ===== */
         console.log(`
-        ✨ BIO LINK FULLSCREEN - ALESSANDRA GOMES YOGA ✨
+        ✨ ALESSANDRA GOMES YOGA - BIO LINK ✨
         
-        🌍 TEMAS IMPLEMENTADOS:
-        
-        🇧🇷 BRASIL: Verde, Amarelo, Azul + Fundo do Rio de Janeiro
-        🇺🇸 EUA: Vermelho, Branco, Azul + Fundo de Hollywood/Las Vegas
-        
-        🎨 RECURSOS:
-        - Fundo fullscreen com imagens reais
-        - Overlay colorido com cores do tema
-        - Transição suave entre temas (0.8s)
-        - Layout responsivo grid
-        - Animações parallax no scroll
-        - Bandeiras decorativas flutuantes
+        🎨 PALETA DE CORES APLICADA:
+        - Sage: #9fa192 (tom principal)
+        - Sand: #c8b9a6 (detalhes)
+        - Cream: #ddd5c7 (fundo overlay)
+        - White: #f5f5f0 (contrastes)
+        - Gold: #a08843 (destaques e primários)
         
         📝 PERSONALIZAÇÃO:
         
-        Para trocar as imagens de fundo, edite no CSS:
+        Para adicionar sua imagem de fundo, substitua na linha 42:
+        background-image: url('SUA_IMAGEM_AQUI.jpg');
         
-        BRASIL (linha 31):
-        --bg-image: url('SUA_URL_AQUI');
+        Para ajustar a opacidade do overlay (atualmente 92%), modifique na linha 58:
+        opacity: 0.92; (valores entre 0.8 e 0.95 funcionam bem)
         
-        EUA (linha 44):
-        --bg-image: url('SUA_URL_AQUI');
+        🔗 ADICIONE SEUS LINKS:
+        Substitua os "#" nos href dos botões pelos seus links reais
         
-        🔗 LINKS RECOMENDADOS:
-        - WhatsApp BR: https://wa.me/5511999999999
-        - SMS USA: sms:+12345678900
-        - Instagram: https://instagram.com/seu_usuario
+        💡 A logo será exibida corretamente quando você colocar o arquivo Logo.jpg na pasta assets/
         `);
     </script>
 </body>

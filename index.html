@@ -5,32 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alessandra Gomes - Yoga Teacher</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Satisfy&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/canva-sans" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/brittany-signature" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Serif+Display:ital@0;1&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <style>
         /* ===== PALETA DE CORES ===== */
         :root {
-            --color-sage: #9fa192;
-            --color-sand: #c8b9a6;
-            --color-cream: #ddd5c7;
-            --color-white: #f5f5f0;
-            --color-gold: #a08843;
-            
-            /* Cores para uso */
-            --color-primary: var(--color-sage);
-            --color-secondary: var(--color-gold);
-            --color-accent: var(--color-sand);
-            --color-light: var(--color-white);
-            --color-neutral: var(--color-cream);
+            --color-background: #a1a199;
+            --color-title: #9a7c33;
+            --color-subtitle: #dbd1c7;
+            --color-button-text: #f0ede8;
+            --color-details: #cdc1b3;
         }
 
         /* ===== RESET ===== */
@@ -50,7 +34,7 @@
             transition: all 0.5s ease;
         }
 
-        /* Camada de fundo com imagem (substituir por sua foto) */
+        /* Camada de fundo com imagem */
         body::before {
             content: '';
             position: fixed;
@@ -73,7 +57,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--color-cream);
+            background: var(--color-background);
             opacity: 0.92;
             z-index: -1;
         }
@@ -92,13 +76,13 @@
             justify-content: space-between;
             align-items: center;
             padding: 24px 40px;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(15px);
             animation: slideDown 0.8s ease-out;
             position: relative;
             z-index: 100;
             flex-shrink: 0;
-            border-bottom: 1px solid rgba(160, 136, 67, 0.2);
+            border-bottom: 1px solid rgba(205, 193, 179, 0.3);
         }
 
         @keyframes slideDown {
@@ -118,7 +102,7 @@
             font-size: 32px;
             font-weight: 600;
             letter-spacing: 2px;
-            color: var(--color-gold);
+            color: var(--color-title);
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
 
@@ -133,10 +117,10 @@
         .language-toggle {
             display: flex;
             gap: 4px;
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.2);
             padding: 4px;
             border-radius: 12px;
-            border: 1px solid var(--color-accent);
+            border: 1px solid var(--color-details);
             backdrop-filter: blur(10px);
         }
 
@@ -144,7 +128,7 @@
             padding: 8px 16px;
             border: none;
             background: transparent;
-            color: var(--color-primary);
+            color: var(--color-subtitle);
             cursor: pointer;
             border-radius: 8px;
             font-size: 13px;
@@ -154,14 +138,14 @@
         }
 
         .lang-btn.active {
-            background: var(--color-gold);
-            color: white;
-            box-shadow: 0 2px 8px rgba(160, 136, 67, 0.3);
+            background: var(--color-title);
+            color: var(--color-button-text);
+            box-shadow: 0 2px 8px rgba(154, 124, 51, 0.3);
         }
 
         .lang-btn:hover {
-            background: var(--color-sand);
-            color: white;
+            background: var(--color-details);
+            color: var(--color-button-text);
         }
 
         /* ===== CONTEÚDO CENTRAL ===== */
@@ -211,7 +195,7 @@
             left: -8px;
             right: -8px;
             bottom: -8px;
-            background: linear-gradient(135deg, var(--color-sage), var(--color-gold), var(--color-sand));
+            background: linear-gradient(135deg, var(--color-title), var(--color-details), var(--color-subtitle));
             border-radius: 50%;
             animation: rotate 8s linear infinite;
             opacity: 0.6;
@@ -226,16 +210,16 @@
             width: 160px;
             height: 160px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--color-sage), var(--color-sand));
+            background: linear-gradient(135deg, var(--color-title), var(--color-details));
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 64px;
             color: white;
-            box-shadow: 0 12px 40px rgba(159, 161, 146, 0.4);
+            box-shadow: 0 12px 40px rgba(161, 161, 153, 0.4);
             position: relative;
             z-index: 1;
-            border: 4px solid white;
+            border: 4px solid rgba(255, 255, 255, 0.8);
             transition: all 0.5s ease;
         }
 
@@ -256,7 +240,7 @@
             font-size: 56px;
             font-weight: 700;
             margin-bottom: 20px;
-            color: var(--color-gold);
+            color: var(--color-title);
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
             letter-spacing: 3px;
             line-height: 1.2;
@@ -269,7 +253,7 @@
             font-weight: 600;
             letter-spacing: 4px;
             text-transform: uppercase;
-            color: var(--color-sage);
+            color: var(--color-subtitle);
             margin-bottom: 28px;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
         }
@@ -278,7 +262,7 @@
             font-family: "DM Serif Display", serif;
             font-size: 22px;
             line-height: 1.8;
-            color: #5a5a5a;
+            color: var(--color-subtitle);
             font-weight: 400;
             font-style: italic;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
@@ -306,12 +290,12 @@
             align-items: center;
             justify-content: center;
             padding: 24px 32px;
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(10px);
-            border: 2px solid var(--color-accent);
+            border: 2px solid var(--color-details);
             border-radius: 16px;
             text-decoration: none;
-            color: #4a4a4a;
+            color: var(--color-button-text);
             font-size: 16px;
             font-weight: 600;
             letter-spacing: 0.5px;
@@ -319,7 +303,7 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         }
 
         .link-btn::before {
@@ -329,7 +313,7 @@
             left: 50%;
             width: 0;
             height: 0;
-            background: var(--color-sage);
+            background: var(--color-title);
             border-radius: 16px;
             transform: translate(-50%, -50%);
             transition: all 0.5s ease;
@@ -343,9 +327,9 @@
 
         .link-btn:hover {
             transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 20px 56px rgba(159, 161, 146, 0.3);
-            border-color: var(--color-gold);
-            color: white;
+            box-shadow: 0 20px 56px rgba(154, 124, 51, 0.3);
+            border-color: var(--color-title);
+            color: var(--color-button-text);
         }
 
         .link-btn .icon {
@@ -366,40 +350,40 @@
         .link-btn span:last-child {
             position: relative;
             z-index: 1;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         /* Botão Primário */
         .link-btn.primary {
-            background: linear-gradient(135deg, var(--color-gold), var(--color-sand));
-            border-color: var(--color-gold);
-            color: white;
-            box-shadow: 0 12px 32px rgba(160, 136, 67, 0.3);
+            background: linear-gradient(135deg, var(--color-title), var(--color-details));
+            border-color: var(--color-title);
+            color: var(--color-button-text);
+            box-shadow: 0 12px 32px rgba(154, 124, 51, 0.3);
             font-size: 18px;
             padding: 28px 36px;
         }
 
         .link-btn.primary::before {
-            background: linear-gradient(135deg, var(--color-sage), var(--color-gold));
+            background: linear-gradient(135deg, #8a6c2b, var(--color-title));
         }
 
         .link-btn.primary:hover {
             transform: translateY(-12px) scale(1.08);
-            box-shadow: 0 24px 64px rgba(160, 136, 67, 0.4);
-            color: white;
+            box-shadow: 0 24px 64px rgba(154, 124, 51, 0.4);
+            color: var(--color-button-text);
         }
 
         /* ===== FOOTER ===== */
         .footer {
             padding: 48px 40px 36px 40px;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(15px);
             animation: slideUp 0.8s ease-out;
             margin-top: auto;
             position: relative;
             z-index: 100;
             flex-shrink: 0;
-            border-top: 1px solid rgba(160, 136, 67, 0.2);
+            border-top: 1px solid rgba(205, 193, 179, 0.3);
         }
 
         @keyframes slideUp {
@@ -421,50 +405,46 @@
         }
 
         .social-btn {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--color-accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: var(--color-gold);
-    font-size: 24px;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-}
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--color-details);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--color-title);
+            font-size: 24px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
 
-/* deixa os ícones SVG adaptados ao tamanho do botão */
-.social-btn svg {
-    width: 26px;
-    height: 26px;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
+        .social-btn svg {
+            width: 26px;
+            height: 26px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
 
-/* efeito de hover mais suave e com leve brilho */
-.social-btn:hover {
-    transform: scale(1.08);
-    background: var(--color-accent);
-    color: #fff;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
+        .social-btn:hover {
+            transform: scale(1.08);
+            background: var(--color-details);
+            color: var(--color-button-text);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
 
-/* efeito de “pulsar” ao passar o mouse — estilo yoga */
-.social-btn:hover svg {
-    transform: scale(1.15);
-    animation: breathe 1.5s infinite ease-in-out;
-}
+        .social-btn:hover svg {
+            transform: scale(1.15);
+            animation: breathe 1.5s infinite ease-in-out;
+        }
 
-@keyframes breathe {
-    0%, 100% { transform: scale(1); opacity: 0.95; }
-    50% { transform: scale(1.1); opacity: 1; }
-}
-
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.95; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
 
         .social-btn::before {
             content: '';
@@ -473,7 +453,7 @@
             left: 50%;
             width: 0;
             height: 0;
-            background: var(--color-gold);
+            background: var(--color-title);
             border-radius: 50%;
             transform: translate(-50%, -50%);
             transition: all 0.4s ease;
@@ -493,7 +473,7 @@
         .footer-text {
             text-align: center;
             font-size: 14px;
-            color: var(--color-sage);
+            color: var(--color-subtitle);
             font-weight: 400;
             letter-spacing: 1px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
@@ -604,7 +584,6 @@
             }
         }
 
-        /* ===== RESPONSIVIDADE TABLETS ===== */
         @media (min-width: 769px) and (max-width: 1024px) {
             .header {
                 padding: 22px 32px;
@@ -649,7 +628,6 @@
             }
         }
 
-        /* ===== RESPONSIVIDADE CELULARES PEQUENOS ===== */
         @media (max-width: 480px) {
             .content {
                 padding: 40px 16px 60px 16px;
@@ -735,7 +713,6 @@
             }
         }
 
-        /* ===== ÍCONES EM IMAGENS ===== */
         .icon img,
         .social-btn span img {
             width: 28px;
@@ -752,7 +729,6 @@
 </head>
 <body>
     <div class="main-container">
-        <!-- ===== HEADER ===== -->
         <header class="header">
             <div class="brand">✦ Alessandra Gomes ✦</div>
             
@@ -764,13 +740,11 @@
             </div>
         </header>
 
-        <!-- ===== CONTEÚDO PRINCIPAL ===== -->
         <main class="content">
-            <!-- PERFIL -->
             <section class="profile">
                 <div class="profile-image-wrapper">
                     <div class="profile-image">
-                        <img src="./assets/Logo.jpg" alt="Logo Alessandra Gomes">
+                        <img src="./assets/Logo.jpg" alt="Logo AlessandraYoga">
                     </div>
                 </div>
                 
@@ -785,27 +759,22 @@
                 </p>
             </section>
 
-            <!-- LINKS -->
             <section class="links">
-                <!-- Botão 1: Aula Experimental -->
                 <a href="#" class="link-btn primary">
                     <span class="icon">📅</span>
                     <span data-i18n="btn-trial">Agende sua aula experimental</span>
                 </a>
 
-                <!-- Botão 2: Prática Online -->
                 <a href="#" class="link-btn">
                     <span class="icon">💻</span>
                     <span data-i18n="btn-online">Pratique online comigo</span>
                 </a>
 
-                <!-- Botão 3: WhatsApp -->
                 <a href="#" class="link-btn">
                     <span class="icon">💬</span>
                     <span data-i18n="btn-whatsapp">Fale comigo no WhatsApp</span>
                 </a>
 
-                <!-- Botão 4: SMS (USA) -->
                 <a href="#" class="link-btn">
                     <span class="icon">📱</span>
                     <span data-i18n="btn-sms">Envie uma mensagem (USA)</span>
@@ -813,49 +782,39 @@
             </section>
         </main>
 
-        <!-- ===== FOOTER ===== -->
         <footer class="footer">
             <div class="social-links">
-    <!-- Instagram -->
-<a href="https://www.instagram.com/alessandragomes.yoga/" class="social-btn" title="Instagram" target="_blank" rel="noopener">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="currentColor">
-        <path d="M224 141c-63.6 0-114.9 51.3-114.9 114.9S160.4 370.8 224 370.8 338.9 319.5 338.9 255.9 287.6 141 224 141zm0 188.2c-40.4 0-73.3-32.9-73.3-73.3S183.6 182.6 224 182.6 297.3 215.5 297.3 256 264.4 329.2 224 329.2zM398.8 80C365.9 47 322.3 32 275.6 32H172.4C125.7 32 82.1 47 49.2 80S1.2 156.5 1.2 203.2v103.6c0 46.7 15 90.3 48 123.2s76.5 48 123.2 48h103.3c46.7 0 90.3-15 123.2-48s48-76.5 48-123.2V203.2c0-46.7-15-90.3-48-123.2zM398.8 306.8c0 37.8-12.4 70.2-35.2 93s-55.2 35.2-93 35.2H172.4c-37.8 0-70.2-12.4-93-35.2s-35.2-55.2-35.2-93V203.2c0-37.8 12.4-70.2 35.2-93s55.2-35.2 93-35.2h103.3c37.8 0 70.2 12.4 93 35.2s35.2 55.2 35.2 93v103.6z"/>
-        <circle cx="340" cy="136" r="26"/>
-    </svg>
-</a>
+                <a href="#" class="social-btn" title="Instagram" target="_blank" rel="noopener">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="currentColor">
+                        <path d="M224 141c-63.6 0-114.9 51.3-114.9 114.9S160.4 370.8 224 370.8 338.9 319.5 338.9 255.9 287.6 141 224 141zm0 188.2c-40.4 0-73.3-32.9-73.3-73.3S183.6 182.6 224 182.6 297.3 215.5 297.3 256 264.4 329.2 224 329.2zM398.8 80C365.9 47 322.3 32 275.6 32H172.4C125.7 32 82.1 47 49.2 80S1.2 156.5 1.2 203.2v103.6c0 46.7 15 90.3 48 123.2s76.5 48 123.2 48h103.3c46.7 0 90.3-15 123.2-48s48-76.5 48-123.2V203.2c0-46.7-15-90.3-48-123.2zM398.8 306.8c0 37.8-12.4 70.2-35.2 93s-55.2 35.2-93 35.2H172.4c-37.8 0-70.2-12.4-93-35.2s-35.2-55.2-35.2-93V203.2c0-37.8 12.4-70.2 35.2-93s55.2-35.2 93-35.2h103.3c37.8 0 70.2 12.4 93 35.2s35.2 55.2 35.2 93v103.6z"/>
+                        <circle cx="340" cy="136" r="26"/>
+                    </svg>
+                </a>
 
+                <a href="#" class="social-btn" title="Facebook" target="_blank" rel="noopener">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="28" height="28" fill="currentColor">
+                        <path d="M279.14 288l14.22-92.66h-88.91V129.09c0-25.35 12.42-50.06 52.24-50.06H293V6.26S259.3 0 225.36 0c-73.22 0-121.36 44.38-121.36 124.72V195.3H22.89V288h81.11v224h100.17V288z"/>
+                    </svg>
+                </a>
 
-    <!-- Facebook -->
-    <a href="#" class="social-btn" title="Facebook" target="_blank" rel="noopener">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="28" height="28" fill="currentColor">
-            <path d="M279.14 288l14.22-92.66h-88.91V129.09c0-25.35 12.42-50.06 52.24-50.06H293V6.26S259.3 0 225.36 0c-73.22 0-121.36 44.38-121.36 124.72V195.3H22.89V288h81.11v224h100.17V288z"/>
-        </svg>
-    </a>
+                <a href="https://wa.me/17025817782" class="social-btn" title="WhatsApp" target="_blank" rel="noopener">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="currentColor">
+                        <path d="M380.9 97.1C339 55.2 283.2 32 224.5 32 106 32 9.4 128.6 9.4 247.1c0 42.3 11.2 83.6 32.5 119.7L0 480l116.7-41.1c34.8 19 74.3 29.2 114.6 29.2h.1c118.5 0 215.1-96.6 215.1-215.1.1-58.7-22.7-114.5-65.6-156.9zM224.5 438.5c-36.3 0-71.9-9.8-103-28.3l-7.4-4.4-69.2 24.4 23.9-71.1-4.8-7.3c-20.4-31.1-31.2-67.3-31.2-104.7 0-106.8 86.9-193.7 193.7-193.7 51.8 0 100.5 20.2 137.2 56.9 36.7 36.7 56.9 85.4 56.9 137.2 0 106.8-86.9 193.7-193.7 193.7zm104.5-143.2c-5.7-2.8-33.8-16.7-39.1-18.6-5.3-2-9.1-2.8-12.9 2.8-3.7 5.5-14.8 18.6-18.1 22.4-3.3 3.7-6.7 4.2-12.4 1.4-5.7-2.8-24.2-8.9-46.1-28.4-17-15.1-28.5-33.7-31.8-39.4s-.4-8.7 2.4-11.5c2.5-2.5 5.7-6.7 8.5-10.1 2.8-3.3 3.7-5.5 5.7-9.3 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.9-31.1-17.7-42.6-4.6-11-9.3-9.5-12.9-9.7-3.3-.2-7.1-.2-10.9-.2s-9.9 1.4-15.1 6.9c-5.3 5.5-19.9 19.5-19.9 47.6s20.4 55.2 23.2 59.1c2.8 3.7 39.9 60.9 96.6 85.3 13.5 5.8 24 9.3 32.2 11.9 13.5 4.3 25.8 3.7 35.5 2.3 10.8-1.6 33.8-13.8 38.6-27.1 4.8-13.3 4.8-24.7 3.4-27.1-1.4-2.3-5.2-3.7-10.9-6.6z"/>
+                    </svg>
+                </a>
 
-    <!-- WhatsApp -->
-<a href="https://wa.me/17025817782" class="social-btn" title="WhatsApp" target="_blank" rel="noopener">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="currentColor">
-        <path d="M380.9 97.1C339 55.2 283.2 32 224.5 32 106 32 9.4 128.6 9.4 247.1c0 42.3 11.2 83.6 32.5 119.7L0 480l116.7-41.1c34.8 19 74.3 29.2 114.6 29.2h.1c118.5 0 215.1-96.6 215.1-215.1.1-58.7-22.7-114.5-65.6-156.9zM224.5 438.5c-36.3 0-71.9-9.8-103-28.3l-7.4-4.4-69.2 24.4 23.9-71.1-4.8-7.3c-20.4-31.1-31.2-67.3-31.2-104.7 0-106.8 86.9-193.7 193.7-193.7 51.8 0 100.5 20.2 137.2 56.9 36.7 36.7 56.9 85.4 56.9 137.2 0 106.8-86.9 193.7-193.7 193.7zm104.5-143.2c-5.7-2.8-33.8-16.7-39.1-18.6-5.3-2-9.1-2.8-12.9 2.8-3.7 5.5-14.8 18.6-18.1 22.4-3.3 3.7-6.7 4.2-12.4 1.4-5.7-2.8-24.2-8.9-46.1-28.4-17-15.1-28.5-33.7-31.8-39.4s-.4-8.7 2.4-11.5c2.5-2.5 5.7-6.7 8.5-10.1 2.8-3.3 3.7-5.5 5.7-9.3 1.9-3.7.9-6.9-.5-9.7-1.4-2.8-12.9-31.1-17.7-42.6-4.6-11-9.3-9.5-12.9-9.7-3.3-.2-7.1-.2-10.9-.2s-9.9 1.4-15.1 6.9c-5.3 5.5-19.9 19.5-19.9 47.6s20.4 55.2 23.2 59.1c2.8 3.7 39.9 60.9 96.6 85.3 13.5 5.8 24 9.3 32.2 11.9 13.5 4.3 25.8 3.7 35.5 2.3 10.8-1.6 33.8-13.8 38.6-27.1 4.8-13.3 4.8-24.7 3.4-27.1-1.4-2.3-5.2-3.7-10.9-6.6z"/>
-    </svg>
-</a>
+                <a href="mailto:example@email.com" class="social-btn" title="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="28" height="28" fill="currentColor">
+                        <path d="M464 64H48C21.5 64 0 85.5 0 112v288c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM464 176l-208 128L48 176v-48l208 128 208-128v48z"/>
+                    </svg>
+                </a>
+            </div>
 
-
-    <!-- Email -->
-<a href="mailto:example@email.com" class="social-btn" title="Email">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="28" height="28" fill="currentColor">
-        <path d="M464 64H48C21.5 64 0 85.5 0 112v288c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM464 176l-208 128L48 176v-48l208 128 208-128v48z"/>
-    </svg>
-</a>
-
-</div>
-
-            
             <p class="footer-text">© 2025 Alessandra Gomes Yoga</p>
         </footer>
     </div>
 
     <script>
-        /* ===== TRADUÇÕES ===== */
         const translations = {
             pt: {
                 subtitle: 'Professora de Yoga',
@@ -875,7 +834,6 @@
             }
         };
 
-        /* ===== ALTERNÂNCIA DE IDIOMA ===== */
         let currentLang = 'pt';
         const langButtons = document.querySelectorAll('.lang-btn');
         
@@ -897,7 +855,6 @@
             });
         });
 
-        /* ===== EFEITO PARALLAX NO SCROLL ===== */
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const profile = document.querySelector('.profile');
@@ -912,7 +869,6 @@
             }
         });
 
-        /* ===== ANIMAÇÃO DE ENTRADA DOS BOTÕES ===== */
         const observerOptions = {
             threshold: 0.2,
             rootMargin: '0px'
@@ -936,29 +892,20 @@
             observer.observe(btn);
         });
 
-        /* ===== INSTRUÇÕES ===== */
         console.log(`
         ✨ ALESSANDRA GOMES YOGA - BIO LINK ✨
         
-        🎨 PALETA DE CORES APLICADA:
-        - Sage: #9fa192 (tom principal)
-        - Sand: #c8b9a6 (detalhes)
-        - Cream: #ddd5c7 (fundo overlay)
-        - White: #f5f5f0 (contrastes)
-        - Gold: #a08843 (destaques e primários)
+        🎨 NOVA PALETA DE CORES APLICADA:
+        - Fundo: #a1a199 (cor da logo)
+        - Títulos: #9a7c33 (dourado)
+        - Subtítulos: #dbd1c7 (bege claro)
+        - Texto dos botões: #f0ede8 (off-white)
+        - Detalhes: #cdc1b3 (bege médio)
         
         📝 PERSONALIZAÇÃO:
-        
-        Para adicionar sua imagem de fundo, substitua na linha 42:
-        background-image: url('SUA_IMAGEM_AQUI.jpg');
-        
-        Para ajustar a opacidade do overlay (atualmente 92%), modifique na linha 58:
-        opacity: 0.92; (valores entre 0.8 e 0.95 funcionam bem)
-        
-        🔗 ADICIONE SEUS LINKS:
-        Substitua os "#" nos href dos botões pelos seus links reais
-        
-        💡 A logo será exibida corretamente quando você colocar o arquivo Logo.jpg na pasta assets/
+        - Adicione sua foto substituindo o emoji 🧘‍♀️ por <img src="./assets/Logo.jpg" alt="Logo">
+        - Atualize os links dos botões (substituir #)
+        - Adicione links das redes sociais nos href
         `);
     </script>
 </body>

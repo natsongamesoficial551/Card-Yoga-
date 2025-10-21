@@ -14,7 +14,7 @@
         /* ===== PALETA DE CORES ===== */
         :root {
             --color-background: #a1a199;
-            --color-title: #9a7c33;
+            --color-title: #ebe4dd;
             --color-subtitle: #dbd1c7;
             --color-button-text: #f0ede8;
             --color-details: #cdc1b3;
@@ -253,7 +253,6 @@
 
         .profile h1 {
             font-family: "DM Serif Display", serif;
-            font-style: italic;
             font-size: 56px;
             font-weight: 700;
             margin-bottom: 20px;
@@ -265,24 +264,20 @@
 
         .profile .subtitle {
             font-family: 'CanvaSans', sans-serif;
-            font-style: oblique;
-            font-size: 24px;
+            font-size: 21px;
             font-weight: 600;
             letter-spacing: 4px;
             text-transform: uppercase;
             color: var(--color-subtitle);
             margin-bottom: 28px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .profile .bio {
             font-family: 'CanvaSans', sans-serif;
-            font-size: 21px;
-            line-height: 1.8;
+            font-size: 18px;
+            line-height: 1.4;
             color: var(--color-subtitle);
-            font-weight: 400;
-            font-style: italic;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+            font-weight: 200px;
             max-width: 500px;
             margin: 0 auto;
             padding: 0 20px;
@@ -302,14 +297,14 @@
         }
 
         .link-btn {
-            font-family: 'Brittany', sans-serif;
+            font-family: "DM Serif Display", serif;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 24px 32px;
-            background: #cdc1b3;
+            background: #a1a199;
             backdrop-filter: blur(10px);
-            border: 2px solid var(--color-details);
+            border: 2px solid var(--color-button-text);
             border-radius: 2600px;
             text-decoration: none;
             color: var(--color-button-text);
@@ -320,7 +315,7 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.267);
         }
 
         .link-btn::before {
@@ -344,7 +339,6 @@
 
         .link-btn:hover {
             transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 20px 56px rgba(154, 124, 51, 0.3);
             border-color: var(--color-title);
             color: var(--color-button-text);
         }
@@ -357,7 +351,6 @@
             transition: transform 0.4s ease;
             display: flex;
             align-items: center;
-            filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.1));
         }
 
         .link-btn:hover .icon {
@@ -366,17 +359,15 @@
 
         .link-btn span:last-child {
             position: relative;
-            font-size: 18px;
+            font-size: 16px;
             z-index: 1;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.39);
         }
 
         /* Botão Primário */
         .link-btn.primary {
-            background: #cdc1b3;
-            border-color: var(--color-details);
+            background: #a1a199;
+            border-color: var(--color-button-text);
             color: var(--color-button-text);
-            box-shadow: 0 12px 32px rgba(154, 124, 51, 0.3);
             font-size: 18px;
             padding: 28px 36px;
         }
@@ -387,7 +378,6 @@
 
         .link-btn.primary:hover {
             transform: translateY(-12px) scale(1.08);
-            box-shadow: 0 24px 64px rgba(154, 124, 51, 0.4);
             color: var(--color-button-text);
         }
 
@@ -748,7 +738,7 @@
 <body>
     <div class="main-container">
         <header class="header">
-            <div class="brand">✦ ALESSANDRA GOMES ✦</div>
+            <div class="brand">✦ Alessandra Gomes ✦</div>
             
             <div class="controls">
                 <div class="language-toggle">
@@ -766,7 +756,7 @@
                     </div>
                 </div>
                 
-                <h1>ALESSANDRA GOMES</h1>
+                <h1>Alessandra Gomes</h1>
                 
                 <p class="subtitle" data-i18n="subtitle">
                     Professora de Yoga
@@ -780,22 +770,22 @@
             <section class="links">
                 <a href="#" class="link-btn primary">
                     <span class="icon">📅</span>
-                    <span data-i18n="btn-trial">AGENDE SUA AULA</span>
+                    <span data-i18n="btn-trial">Agende sua aula experimental!</span>
                 </a>
 
                 <a href="#" class="link-btn">
                     <span class="icon">💻</span>
-                    <span data-i18n="btn-online">PRATIQUE ONLINE COMIGO</span>
+                    <span data-i18n="btn-online">Pratique online comigo</span>
                 </a>
 
                 <a href="#" class="link-btn">
                     <span class="icon">💬</span>
-                    <span data-i18n="btn-whatsapp">FALE COMIGO NO WHATSAPP</span>
+                    <span data-i18n="btn-whatsapp">WhatsApp</span>
                 </a>
 
                 <a href="#" class="link-btn">
                     <span class="icon">📱</span>
-                    <span data-i18n="btn-sms">ENTRE NO MEU INSTAGRAM</span>
+                    <span data-i18n="btn-sms">Mensagem de texto</span>
                 </a>
             </section>
         </main>
@@ -839,16 +829,16 @@
                 bio: 'Conecte-se com sua essência através do movimento consciente e da respiração',
                 'btn-trial': 'Agende sua aula experimental',
                 'btn-online': 'Pratique online comigo',
-                'btn-whatsapp': 'Fale comigo no WhatsApp',
-                'btn-sms': 'Envie uma mensagem (USA)'
+                'btn-whatsapp': 'WhatsApp',
+                'btn-sms': 'Mensagem de texto'
             },
             en: {
                 subtitle: 'Yoga Teacher',
                 bio: 'Connect with your essence through mindful movement and breath',
-                'btn-trial': 'Book a trial class',
+                'btn-trial': 'Book your free trial class!',
                 'btn-online': 'Practice online with me',
-                'btn-whatsapp': 'Chat with me on WhatsApp',
-                'btn-sms': 'Send me a text (USA)'
+                'btn-whatsapp': 'WhatsApp',
+                'btn-sms': 'Text Message'
             }
         };
 

@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alessandra Gomes - Yoga Teacher</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+<<<<<<< HEAD
+=======
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Bebas+Neue&family=Cookie&family=DM+Serif+Display:ital@0;1&family=DynaPuff:wght@400..700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Knewave&family=Libertinus+Keyboard&family=Limelight&family=Monoton&family=Permanent+Marker&family=Press+Start+2P&family=Rubik+Distressed&family=Workbench&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+>>>>>>> 5135523 (atualização)
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Serif+Display:ital@0;1&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <style>
@@ -85,6 +91,20 @@
             border-bottom: 1px solid rgba(205, 193, 179, 0.3);
         }
 
+        @font-face {
+    font-family: 'Brittany';
+    src: url('./fonts/Brittany.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CanvaSans';
+    src: url('./fonts/Canva-Sans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
         @keyframes slideDown {
             from {
                 opacity: 0;
@@ -98,7 +118,7 @@
 
         /* Logo/Brand */
         .brand {
-            font-family: "Allura", cursive;
+            font-family: "DM Serif Display", serif;
             font-size: 32px;
             font-weight: 600;
             letter-spacing: 2px;
@@ -235,7 +255,7 @@
         }
 
         .profile h1 {
-            font-family: "Allura", cursive;
+            font-family: "DM Serif Display", serif;
             font-style: italic;
             font-size: 56px;
             font-weight: 700;
@@ -247,9 +267,9 @@
         }
 
         .profile .subtitle {
-            font-family: "DM Serif Display", serif;
+            font-family: 'CanvaSans', sans-serif;
             font-style: oblique;
-            font-size: 16px;
+            font-size: 24px;
             font-weight: 600;
             letter-spacing: 4px;
             text-transform: uppercase;
@@ -259,8 +279,8 @@
         }
 
         .profile .bio {
-            font-family: "DM Serif Display", serif;
-            font-size: 22px;
+            font-family: 'CanvaSans', sans-serif;
+            font-size: 21px;
             line-height: 1.8;
             color: var(--color-subtitle);
             font-weight: 400;
@@ -285,19 +305,26 @@
         }
 
         .link-btn {
-            font-family: "Merriweather", serif;
+            font-family: 'Brittany', sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 24px 32px;
+<<<<<<< HEAD
             background: rgba(255, 255, 255, 0.25);
             backdrop-filter: blur(10px);
             border: 2px solid var(--color-details);
             border-radius: 16px;
+=======
+            background: #cdc1b3;
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--color-details);
+            border-radius: 26px;
+>>>>>>> 5135523 (atualização)
             text-decoration: none;
             color: var(--color-button-text);
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 900;
             letter-spacing: 0.5px;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
@@ -314,7 +341,11 @@
             width: 0;
             height: 0;
             background: var(--color-title);
+<<<<<<< HEAD
             border-radius: 16px;
+=======
+            border-radius: 26px;
+>>>>>>> 5135523 (atualização)
             transform: translate(-50%, -50%);
             transition: all 0.5s ease;
             z-index: 0;
@@ -349,14 +380,24 @@
 
         .link-btn span:last-child {
             position: relative;
+            font-size: 32px;
             z-index: 1;
+<<<<<<< HEAD
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+=======
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.39);
+>>>>>>> 5135523 (atualização)
         }
 
         /* Botão Primário */
         .link-btn.primary {
+<<<<<<< HEAD
             background: linear-gradient(135deg, var(--color-title), var(--color-details));
             border-color: var(--color-title);
+=======
+            background: #cdc1b3;
+            border-color: var(--color-details);
+>>>>>>> 5135523 (atualização)
             color: var(--color-button-text);
             box-shadow: 0 12px 32px rgba(154, 124, 51, 0.3);
             font-size: 18px;
@@ -364,7 +405,11 @@
         }
 
         .link-btn.primary::before {
+<<<<<<< HEAD
             background: linear-gradient(135deg, #8a6c2b, var(--color-title));
+=======
+            background: var(--color-title);
+>>>>>>> 5135523 (atualização)
         }
 
         .link-btn.primary:hover {
@@ -677,7 +722,7 @@
             .link-btn {
                 padding: 18px 24px;
                 font-size: 14px;
-                border-radius: 14px;
+                border-radius: 26px;
             }
 
             .link-btn.primary {
@@ -893,8 +938,9 @@
         });
 
         console.log(`
-        ✨ ALESSANDRA GOMES YOGA - BIO LINK ✨
+        ✨ ALESSANDRA GOMES YOGA - BIO LINK ATUALIZADO ✨
         
+<<<<<<< HEAD
         🎨 NOVA PALETA DE CORES APLICADA:
         - Fundo: #a1a199 (cor da logo)
         - Títulos: #9a7c33 (dourado)
@@ -904,6 +950,15 @@
         
         📝 PERSONALIZAÇÃO:
         - Adicione sua foto substituindo o emoji 🧘‍♀️ por <img src="./assets/Logo.jpg" alt="Logo">
+=======
+        🎨 ALTERAÇÕES APLICADAS:
+        - Cor dos botões: #cdc1b3 (sem opacidade)
+        - Border-radius dos botões: 26px
+        - Fundo transparente removido para mostrar a cor sólida
+        
+        📝 PRÓXIMOS PASSOS:
+        - Adicione sua foto substituindo o caminho ./assets/Logo.jpg
+>>>>>>> 5135523 (atualização)
         - Atualize os links dos botões (substituir #)
         - Adicione links das redes sociais nos href
         `);

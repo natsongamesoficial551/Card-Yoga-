@@ -307,26 +307,27 @@
         }
 
         .link-btn {
-            font-family: "DM Serif Display", serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 24px 32px;
-            background: #a1a199;
-            backdrop-filter: blur(10px);
-            border: 2px solid var(--color-button-text);
-            border-radius: 2600px;
-            text-decoration: none;
-            color: var(--color-button-text);
-            font-size: 16px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.267);
-        }
+    font-family: "DM Serif Display", serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 32px;
+    background: #a1a199;
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--color-button-text);
+    border-radius: 2600px;
+    text-decoration: none;
+    color: var(--color-button-text);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.267);
+    white-space: nowrap; /* ADICIONE ESTA LINHA */
+}
 
         .link-btn::before {
             content: '';
@@ -375,12 +376,13 @@
 
         /* Botão Primário */
         .link-btn.primary {
-            background: #a1a199;
-            border-color: var(--color-button-text);
-            color: var(--color-button-text);
-            font-size: 18px;
-            padding: 28px 36px;
-        }
+    background: #a1a199;
+    border-color: var(--color-button-text);
+    color: var(--color-button-text);
+    font-size: 18px;
+    padding: 28px 36px;
+    white-space: nowrap; /* ADICIONE ESTA LINHA */
+}
 
         .link-btn.primary::before {
             background: var(--color-title);
